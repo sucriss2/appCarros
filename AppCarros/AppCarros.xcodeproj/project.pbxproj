@@ -65,9 +65,7 @@
 				8C897EDA2912A2DB00B757F8 /* AppDelegate.swift */,
 				8C897EDC2912A2DB00B757F8 /* SceneDelegate.swift */,
 				8C897EF42912AA9100B757F8 /* Coordinator */,
-				8C897EF52912AEE200B757F8 /* LoginCoordinator.swift */,
-				8C897EDE2912A2DB00B757F8 /* LoginViewController.swift */,
-				8C897EF82912BA2500B757F8 /* LoginStoryboard.storyboard */,
+				8CDED0782913156D000F665C /* Login */,
 				8C897EE32912A2DC00B757F8 /* Assets.xcassets */,
 				8C897EE52912A2DC00B757F8 /* LaunchScreen.storyboard */,
 				8C897EE82912A2DC00B757F8 /* Info.plist */,
@@ -82,6 +80,16 @@
 				8C897EF02912A6DF00B757F8 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8CDED0782913156D000F665C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8C897EF52912AEE200B757F8 /* LoginCoordinator.swift */,
+				8C897EDE2912A2DB00B757F8 /* LoginViewController.swift */,
+				8C897EF82912BA2500B757F8 /* LoginStoryboard.storyboard */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

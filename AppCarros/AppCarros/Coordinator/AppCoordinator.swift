@@ -11,7 +11,7 @@ class AppCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     private var window: UIWindow?
-   // private var childCoordinator: Coordinator?
+    private var childCoordinator: Coordinator?
 
     init(navigationController: UINavigationController, window: UIWindow) {
         self.navigationController = navigationController
@@ -29,7 +29,7 @@ class AppCoordinator: Coordinator {
     fileprivate func showLoginCoordinator(_ navigationController: UINavigationController) {
         let loginCoordinator = LoginCoordinator(navigationController: navigationController)
         loginCoordinator.start()
-      //  childCoordinator = loginCoordinator
+        childCoordinator = loginCoordinator
     }
 
 }
