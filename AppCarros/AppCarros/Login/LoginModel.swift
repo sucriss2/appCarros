@@ -7,33 +7,31 @@
 
 import Foundation
 
-protocol LoginModelDelegate {
-    func loginModelSuccess()
-    func loginModelFail(message: String)
+protocol LoginModelDelegate: AnyObject {
+    func loginSuccess()
+    func loginFail(message: String)
 }
 
 class LoginModel {
-    private(set) var login: Login?
-    private(set) var user: User?
-    var delegate: LoginModelDelegate?
+    weak var delegate: LoginModelDelegate?
     var service: LoginService?
+    private var userSession: UserSession
 
-    init() {
+    init(userSession: UserSession = UserSession.shared) {
+        self.userSession = userSession
     }
 
-    func showLogin() {
-        service?.fecthLogin(
-            onComplete: { result in
-
-                self.login = result
-                print(result)
-                self.delegate?.loginModelSuccess()
+    func login(username: String, password: String) {
+        service?.login(
+            username: username,
+            password: password,
+            onComplete: { [weak self] user in
+                self?.userSession.set(user: user)
+                self?.delegate?.loginSuccess()
                 print("=> Usuario encontrado <=")
-
             },
             onError: { error in
-
-                self.delegate?.loginModelFail(message: "Erro de login. Confira seus dados e tente novamente.")
+                self.delegate?.loginFail(message: "Erro de login. Confira seus dados e tente novamente.")
                 print(error.localizedDescription)
             }
         )

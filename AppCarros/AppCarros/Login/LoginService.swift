@@ -14,23 +14,43 @@ struct LoginService {
         self.network = network
     }
 
-    func fecthLogin(
-        onComplete: @escaping (Login) -> Void,
+    func login(
+        username: String,
+        password: String,
+        onComplete: @escaping (User) -> Void,
         onError: @escaping (Error) -> Void
     ) {
-        let request = Request.init(
-            baseURL: Config.baseURL,
-            path: "login",
-            method: RequestMethod.post
-        )
+        let credentials = Login(username: username, password: password)
+        do {
+            let encoder = JSONEncoder()
+            let credentialsData = try encoder.encode(credentials)
 
-        network.request(request: request, returning: Login.self) { result in
-            switch result {
-            case .failure(let error):
-                onError(error)
-            case .success(let user):
-                onComplete(user ?? Login(username: "", password: ""))
+            let header: [String: String] = [
+                "Content-Type": "text/plain",
+                "Accept": "*/*"
+            ]
+
+            let request = Request(
+                baseURL: Config.baseURL,
+                path: "login",
+                method: RequestMethod.post,
+                header: header,
+                body: credentialsData
+            )
+
+            network.request(request: request, returning: User.self) { result in
+                switch result {
+                case .failure(let error):
+                    onError(error)
+                case .success(let user):
+                    guard let user = user else {
+                        return
+                    }
+                    onComplete(user)
+                }
             }
+        } catch {
+            onError(error)
         }
     }
 

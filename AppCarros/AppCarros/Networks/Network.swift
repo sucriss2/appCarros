@@ -23,7 +23,7 @@ class Network {
     }
 
     func requestData(
-        using request: RequestProtocol,
+        using request: Request,
         onComplete: @escaping (Result<Data, Error>) -> Void
     ) {
 
@@ -31,6 +31,11 @@ class Network {
         print(url.absoluteString)
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
+        urlRequest.httpBody = request.body
+
+        for (key, value) in request.header {
+            urlRequest.setValue(value, forHTTPHeaderField: key)
+        }
 
         let datatask = session.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
@@ -64,7 +69,7 @@ class Network {
     }
 
     func request<T: Decodable>(
-        request: RequestProtocol,
+        request: Request,
         returning type: T.Type,
         onComplete: @escaping (Result<T?, Error>) -> Void
     ) {

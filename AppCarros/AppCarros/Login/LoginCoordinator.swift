@@ -22,12 +22,18 @@ class LoginCoordinator: Coordinator {
     }
 
     private func makeLoginViewController() -> LoginViewController {
+        let model = LoginModel()
+        let service = LoginService()
         let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(
             withIdentifier: "LoginViewController"
         ) as? LoginViewController else {
             fatalError()
         }
+
+        model.service = service
+        model.delegate = viewController
+        viewController.model = model
 
         return viewController
     }

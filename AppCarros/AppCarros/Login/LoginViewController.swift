@@ -18,36 +18,50 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.isEnabled = false
         model?.delegate = self
         loginTextField.delegate = self
         passwordTextField.delegate = self
         print("==> Abriu a view fofa")
-
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if loginTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false {
-            loginButton.isEnabled = true
+    @IBAction func show(_ sender: UIButton) {
+        if validateForm() {
+            model?.login(username: loginTextField.text ?? "", password: passwordTextField.text ?? "")
         }
     }
 
-    func alert(message: String) {
+    private func validateForm() -> Bool {
+        if loginTextField.text?.isEmpty == true {
+            alert(message: "Campo de Usuario deve ser preenchido")
+            return false
+        }
+
+        if passwordTextField.text?.isEmpty == true {
+            alert(message: "Campo de Senha deve ser preenchido")
+            return false
+        }
+
+        return true
+    }
+
+    private func alert(message: String) {
         let alert = UIAlertController(title: "Atenção!!", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 
-    @IBAction func show(_ sender: UIButton) {
-    }
-
 }
 
 extension LoginViewController: LoginModelDelegate {
-    func loginModelSuccess() {
-        print("-> OKOKOK <-")
+    func loginSuccess() {
+        DispatchQueue.main.async {
+            // ir para proxima tela
+        }
     }
-    func loginModelFail(message: String) {
-        alert(message: message)
+
+    func loginFail(message: String) {
+        DispatchQueue.main.async {
+            self.alert(message: message)
+        }
     }
 }

@@ -12,14 +12,10 @@ enum RequestMethod: String {
     case post = "POST"
 }
 
-protocol RequestProtocol {
-    var baseURL: String { get }
-    var path: String { get }
-    var method: RequestMethod { get }
-}
-
-struct Request: RequestProtocol {
+struct Request {
     var baseURL: String
     var path: String
     var method: RequestMethod
+    var header: [String: String]
+    var body: Data?
 }
