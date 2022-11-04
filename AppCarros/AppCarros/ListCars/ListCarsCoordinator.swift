@@ -16,8 +16,18 @@ class ListCarsCoordinator: Coordinator {
     }
 
     func start() {
-        let listCarsVC = ListCarsViewController()
+        let listCarsVC = makeListCarsViewController()
         navigationController.pushViewController(listCarsVC, animated: true)
+    }
+
+    private func makeListCarsViewController() -> ListCarsViewController {
+        let storyboard = UIStoryboard(name: "ListCarsStoryboard", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(
+            withIdentifier: "ListCarsViewController"
+        ) as? ListCarsViewController else {
+            fatalError()
+        }
+        return viewController
     }
 
 }

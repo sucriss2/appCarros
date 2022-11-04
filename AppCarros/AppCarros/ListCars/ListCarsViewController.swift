@@ -8,11 +8,12 @@
 import UIKit
 
 class ListCarsViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+
     weak var coordinator: ListCarsCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         print("~~~> Abriu a SEGUNDA TELA fofa.!!")
     }
 
