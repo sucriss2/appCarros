@@ -51,7 +51,7 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="loginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AjS-N5-Wkt"/>
+                                                    <action selector="show:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="c7K-LE-S3e"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite seu login" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4jx-Q8-jpB">
@@ -236,8 +236,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loginLabel" destination="4jx-Q8-jpB" id="TD5-ww-AYJ"/>
-                        <outlet property="passwordLabel" destination="gcB-lb-loO" id="j9d-lh-xpx"/>
+                        <outlet property="loginButton" destination="dDk-lm-Qok" id="hwh-vn-oje"/>
+                        <outlet property="loginTextField" destination="4jx-Q8-jpB" id="TD5-ww-AYJ"/>
+                        <outlet property="passwordTextField" destination="gcB-lb-loO" id="j9d-lh-xpx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

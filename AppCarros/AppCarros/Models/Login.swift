@@ -10,5 +10,4 @@ import Foundation
 struct Login: Codable {
     var username: String
     var password: String
-    var token: String
 }

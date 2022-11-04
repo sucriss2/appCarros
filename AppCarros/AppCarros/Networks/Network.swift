@@ -32,10 +32,6 @@ class Network {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
 
-        for (field, value) in request.header {
-            urlRequest.addValue(value, forHTTPHeaderField: field)
-        }
-
         let datatask = session.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
@@ -90,4 +86,3 @@ class Network {
     }
 
 }
-

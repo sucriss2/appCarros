@@ -7,21 +7,29 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var loginLabel: UITextField!
-    @IBOutlet weak var passwordLabel: UITextField!
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
 
     weak var coordinator: LoginCoordinator?
-
-    var login = "user"
-    var password = "123"
-//    var token = ""
+    var model: LoginModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.isEnabled = false
+        model?.delegate = self
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
         print("==> Abriu a view fofa")
 
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if loginTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false {
+            loginButton.isEnabled = true
+        }
     }
 
     func alert(message: String) {
@@ -30,15 +38,16 @@ class LoginViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
-    @IBAction func loginButton(_ sender: UIButton) {
-        if loginLabel.text == login && passwordLabel.text == password {
-//            token = Login.token
-//            print(token)
-            print("===Sucess===")
-        } else {
-            alert(message: "Erro de login. Confira seus dados e tente novamente.")
-            print("<<< Erro >>>")
-        }
+    @IBAction func show(_ sender: UIButton) {
     }
 
+}
+
+extension LoginViewController: LoginModelDelegate {
+    func loginModelSuccess() {
+        print("-> OKOKOK <-")
+    }
+    func loginModelFail(message: String) {
+        alert(message: message)
+    }
 }
