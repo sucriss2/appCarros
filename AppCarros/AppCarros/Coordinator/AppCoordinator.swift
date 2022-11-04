@@ -27,9 +27,15 @@ class AppCoordinator: Coordinator {
     }
 
     fileprivate func showLoginCoordinator(_ navigationController: UINavigationController) {
-        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
-        loginCoordinator.start()
-        childCoordinator = loginCoordinator
+        let listCarsCoordinator = ListCarsCoordinator(navigationController: navigationController)
+        listCarsCoordinator.start()
+        childCoordinator = listCarsCoordinator
     }
+
+//    fileprivate func showLoginCoordinator(_ navigationController: UINavigationController) {
+//        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+//        loginCoordinator.start()
+//        childCoordinator = loginCoordinator
+//    }
 
 }
