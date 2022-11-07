@@ -23,7 +23,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="763"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="99" id="heC-Xy-pc6" customClass="ListCarsTableViewCell" customModule="AppCarros" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="99" id="heC-Xy-pc6" customClass="ListCarsTableViewCell" customModule="AppCarros" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="390" height="99"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="heC-Xy-pc6" id="u5R-hc-Ucb">

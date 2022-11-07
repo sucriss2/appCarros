@@ -11,8 +11,10 @@ class ListCarsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     weak var coordinator: ListCarsCoordinator?
-    // var model = ListCarsModel()
-    var cars = ["Chevrolet", "Toyota", "Hyundai", "Volkswagen", "Jeep", "Renault", "Honda"]
+    var model: ListCarsModel?
+    var cars: [Car] {
+        model?.cars ?? []
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +34,13 @@ extension ListCarsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "") // Criando a celula.
-    // let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = cars[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: "cell", for: indexPath
+        ) as? ListCarsTableViewCell else {
+            fatalError()
+        }
+        let car = cars[indexPath.row]
+        cell.prepare(model: car)
         return cell
     }
 

@@ -21,12 +21,16 @@ class ListCarsCoordinator: Coordinator {
     }
 
     private func makeListCarsViewController() -> ListCarsViewController {
+        let model = ListCarsModel()
         let storyboard = UIStoryboard(name: "ListCarsStoryboard", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(
             withIdentifier: "ListCarsViewController"
         ) as? ListCarsViewController else {
             fatalError()
         }
+
+        viewController.model = model
+
         return viewController
     }
 
