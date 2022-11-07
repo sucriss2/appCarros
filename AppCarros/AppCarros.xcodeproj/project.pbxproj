@@ -27,6 +27,11 @@
 		8C897EF12912A6DF00B757F8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C897EF02912A6DF00B757F8 /* AppCoordinator.swift */; };
 		8C897EF62912AEE200B757F8 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C897EF52912AEE200B757F8 /* LoginCoordinator.swift */; };
 		8C897EF92912BA2500B757F8 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C897EF82912BA2500B757F8 /* LoginStoryboard.storyboard */; };
+		8CA7EE0A2919456D00AB620C /* ListCarsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7EE092919456D00AB620C /* ListCarsTableViewCell.swift */; };
+		8CA7EE0C29194A6700AB620C /* ListCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7EE0B29194A6700AB620C /* ListCars.swift */; };
+		8CA7EE0E29194E7F00AB620C /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7EE0D29194E7F00AB620C /* Car.swift */; };
+		8CA7EE10291951CB00AB620C /* ListCarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7EE0F291951CB00AB620C /* ListCarsModel.swift */; };
+		8CA7EE132919543200AB620C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA7EE122919543200AB620C /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +57,10 @@
 		8C897EF02912A6DF00B757F8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8C897EF52912AEE200B757F8 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		8C897EF82912BA2500B757F8 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		8CA7EE092919456D00AB620C /* ListCarsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsTableViewCell.swift; sourceTree = "<group>"; };
+		8CA7EE0B29194A6700AB620C /* ListCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCars.swift; sourceTree = "<group>"; };
+		8CA7EE0D29194E7F00AB620C /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		8CA7EE0F291951CB00AB620C /* ListCarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA7EE132919543200AB620C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +91,8 @@
 				8C54401529147BDC009721C7 /* User.swift */,
 				8C5440042913FDB9009721C7 /* Login.swift */,
 				8C54401829148E62009721C7 /* UserSession.swift */,
+				8CA7EE0B29194A6700AB620C /* ListCars.swift */,
+				8CA7EE0D29194E7F00AB620C /* Car.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -90,6 +102,8 @@
 			children = (
 				8C54401C2915A578009721C7 /* ListCarsCoordinator.swift */,
 				8C54401A2915A504009721C7 /* ListCarsViewController.swift */,
+				8CA7EE0F291951CB00AB620C /* ListCarsModel.swift */,
+				8CA7EE092919456D00AB620C /* ListCarsTableViewCell.swift */,
 				8C54401F2915AD51009721C7 /* ListCarsStoryboard.storyboard */,
 			);
 			path = ListCars;
@@ -166,6 +180,9 @@
 			dependencies = (
 			);
 			name = AppCarros;
+			packageProductDependencies = (
+				8CA7EE122919543200AB620C /* Kingfisher */,
+			);
 			productName = AppCarros;
 			productReference = 8C897ED72912A2DB00B757F8 /* AppCarros.app */;
 			productType = "com.apple.product-type.application";
@@ -194,6 +211,9 @@
 				Base,
 			);
 			mainGroup = 8C897ECE2912A2DB00B757F8;
+			packageReferences = (
+				8CA7EE112919543200AB620C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 8C897ED82912A2DB00B757F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -249,13 +269,17 @@
 				8C54401429142EF5009721C7 /* LoginModel.swift in Sources */,
 				8C897EF62912AEE200B757F8 /* LoginCoordinator.swift in Sources */,
 				8C897EEF2912A67700B757F8 /* Coordinator.swift in Sources */,
+				8CA7EE0A2919456D00AB620C /* ListCarsTableViewCell.swift in Sources */,
+				8CA7EE10291951CB00AB620C /* ListCarsModel.swift in Sources */,
 				8C897EDF2912A2DB00B757F8 /* LoginViewController.swift in Sources */,
 				8C54401229142512009721C7 /* Config.swift in Sources */,
 				8C897EF12912A6DF00B757F8 /* AppCoordinator.swift in Sources */,
 				8C54400D29142329009721C7 /* Network.swift in Sources */,
+				8CA7EE0C29194A6700AB620C /* ListCars.swift in Sources */,
 				8C897EDB2912A2DB00B757F8 /* AppDelegate.swift in Sources */,
 				8C54400F29142387009721C7 /* Request.swift in Sources */,
 				8C54401D2915A578009721C7 /* ListCarsCoordinator.swift in Sources */,
+				8CA7EE0E29194E7F00AB620C /* Car.swift in Sources */,
 				8C897EDD2912A2DB00B757F8 /* SceneDelegate.swift in Sources */,
 				8C54400B29140ED5009721C7 /* LoginService.swift in Sources */,
 			);
@@ -467,6 +491,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8CA7EE112919543200AB620C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8CA7EE122919543200AB620C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CA7EE112919543200AB620C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8C897ECF2912A2DB00B757F8 /* Project object */;
 }
