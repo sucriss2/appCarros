@@ -22,6 +22,7 @@ class ListCarsCoordinator: Coordinator {
 
     private func makeListCarsViewController() -> ListCarsViewController {
         let model = ListCarsModel()
+        let service = ListCarsService()
         let storyboard = UIStoryboard(name: "ListCarsStoryboard", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(
             withIdentifier: "ListCarsViewController"
@@ -29,6 +30,7 @@ class ListCarsCoordinator: Coordinator {
             fatalError()
         }
 
+        model.service = service
         viewController.model = model
 
         return viewController

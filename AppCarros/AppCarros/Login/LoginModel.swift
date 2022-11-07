@@ -28,7 +28,6 @@ class LoginModel {
             onComplete: { [weak self] user in
                 self?.userSession.set(user: user)
                 self?.delegate?.loginSuccess()
-                print("=> Usuario encontrado <=")
             },
             onError: { error in
                 self.delegate?.loginFail(message: "Erro de login. Confira seus dados e tente novamente.")

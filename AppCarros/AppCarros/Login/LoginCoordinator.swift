@@ -10,7 +10,6 @@ import UIKit
 
 class LoginCoordinator: Coordinator {
     var navigationController: UINavigationController
-    // private var viewController: LoginViewController?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

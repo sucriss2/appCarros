@@ -32,6 +32,7 @@
 		8CA7EE0E29194E7F00AB620C /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7EE0D29194E7F00AB620C /* Car.swift */; };
 		8CA7EE10291951CB00AB620C /* ListCarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7EE0F291951CB00AB620C /* ListCarsModel.swift */; };
 		8CA7EE132919543200AB620C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA7EE122919543200AB620C /* Kingfisher */; };
+		8CA7EE1529198BF000AB620C /* ListCarsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7EE1429198BF000AB620C /* ListCarsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		8CA7EE0B29194A6700AB620C /* ListCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCars.swift; sourceTree = "<group>"; };
 		8CA7EE0D29194E7F00AB620C /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		8CA7EE0F291951CB00AB620C /* ListCarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsModel.swift; sourceTree = "<group>"; };
+		8CA7EE1429198BF000AB620C /* ListCarsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				8C54401C2915A578009721C7 /* ListCarsCoordinator.swift */,
 				8C54401A2915A504009721C7 /* ListCarsViewController.swift */,
 				8CA7EE0F291951CB00AB620C /* ListCarsModel.swift */,
+				8CA7EE1429198BF000AB620C /* ListCarsService.swift */,
 				8CA7EE092919456D00AB620C /* ListCarsTableViewCell.swift */,
 				8C54401F2915AD51009721C7 /* ListCarsStoryboard.storyboard */,
 			);
@@ -271,6 +274,7 @@
 				8C897EEF2912A67700B757F8 /* Coordinator.swift in Sources */,
 				8CA7EE0A2919456D00AB620C /* ListCarsTableViewCell.swift in Sources */,
 				8CA7EE10291951CB00AB620C /* ListCarsModel.swift in Sources */,
+				8CA7EE1529198BF000AB620C /* ListCarsService.swift in Sources */,
 				8C897EDF2912A2DB00B757F8 /* LoginViewController.swift in Sources */,
 				8C54401229142512009721C7 /* Config.swift in Sources */,
 				8C897EF12912A6DF00B757F8 /* AppCoordinator.swift in Sources */,
