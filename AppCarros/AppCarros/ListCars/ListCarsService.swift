@@ -17,13 +17,13 @@ struct ListCarsService {
     }
 
     func fetch(
-        onComplete: @escaping (ListCars) -> Void,
+        onComplete: @escaping ([Car]) -> Void,
         onError: @escaping (Error) -> Void
     ) {
         let header: [String: String] = [
             "Content-Type": "text/plain",
             "Accept": "*/*",
-            "Authentication" : userSession.bearerToken
+            "Authorization": userSession.bearerToken
         ]
 
         let request = Request(
@@ -33,12 +33,12 @@ struct ListCarsService {
             header: header
         )
 
-        network.request(request: request, returning: ListCars.self) { result in
+        network.request(request: request, returning: [Car].self) { result in
             switch result {
             case .failure(let error):
                 onError(error)
             case .success(let cars):
-                onComplete(cars ?? ListCars(cars: []))
+                onComplete(cars ?? [])
             }
         }
     }

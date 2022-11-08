@@ -31,6 +31,7 @@ class ListCarsCoordinator: Coordinator {
         }
 
         model.service = service
+        model.delegate = viewController
         viewController.model = model
 
         return viewController

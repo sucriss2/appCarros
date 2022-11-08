@@ -27,7 +27,7 @@ class ListCarsModel {
                 guard let self = self else {
                     return
                 }
-                self.cars.append(contentsOf: cars.cars)
+                self.cars.append(contentsOf: cars)
                 self.delegate?.didUpdateListCars()
             },
             onError: { error in

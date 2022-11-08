@@ -19,6 +19,7 @@ class ListCarsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        model?.load()
         print("~~~> Abriu a SEGUNDA TELA fofa.!!")
     }
 
@@ -42,6 +43,21 @@ extension ListCarsViewController: UITableViewDataSource {
         let car = cars[indexPath.row]
         cell.prepare(model: car)
         return cell
+    }
+
+}
+
+extension ListCarsViewController: ListCarsModelDelegate {
+    func didUpdateListCars() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+
+    func didErrorListCars(message: String) {
+        DispatchQueue.main.async {
+            print(message)
+        }
     }
 
 }

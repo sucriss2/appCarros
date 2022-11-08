@@ -26,7 +26,7 @@ class ListCarsTableViewCell: UITableViewCell {
 
     func prepare(model: Car) {
         nameLabel.text = model.nome
-        let url = URL(string: model.urlFoto)
+        let url = URL(string: model.urlFoto ?? "")
         self.photoImageView.kf.setImage(with: url)
     }
 }

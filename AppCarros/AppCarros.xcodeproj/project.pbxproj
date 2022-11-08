@@ -28,7 +28,6 @@
 		8C897EF62912AEE200B757F8 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C897EF52912AEE200B757F8 /* LoginCoordinator.swift */; };
 		8C897EF92912BA2500B757F8 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C897EF82912BA2500B757F8 /* LoginStoryboard.storyboard */; };
 		8CA7EE0A2919456D00AB620C /* ListCarsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7EE092919456D00AB620C /* ListCarsTableViewCell.swift */; };
-		8CA7EE0C29194A6700AB620C /* ListCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7EE0B29194A6700AB620C /* ListCars.swift */; };
 		8CA7EE0E29194E7F00AB620C /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7EE0D29194E7F00AB620C /* Car.swift */; };
 		8CA7EE10291951CB00AB620C /* ListCarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7EE0F291951CB00AB620C /* ListCarsModel.swift */; };
 		8CA7EE132919543200AB620C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA7EE122919543200AB620C /* Kingfisher */; };
@@ -59,7 +58,6 @@
 		8C897EF52912AEE200B757F8 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		8C897EF82912BA2500B757F8 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		8CA7EE092919456D00AB620C /* ListCarsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsTableViewCell.swift; sourceTree = "<group>"; };
-		8CA7EE0B29194A6700AB620C /* ListCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCars.swift; sourceTree = "<group>"; };
 		8CA7EE0D29194E7F00AB620C /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		8CA7EE0F291951CB00AB620C /* ListCarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsModel.swift; sourceTree = "<group>"; };
 		8CA7EE1429198BF000AB620C /* ListCarsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsService.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				8C54401529147BDC009721C7 /* User.swift */,
 				8C5440042913FDB9009721C7 /* Login.swift */,
 				8C54401829148E62009721C7 /* UserSession.swift */,
-				8CA7EE0B29194A6700AB620C /* ListCars.swift */,
 				8CA7EE0D29194E7F00AB620C /* Car.swift */,
 			);
 			path = Models;
@@ -279,7 +276,6 @@
 				8C54401229142512009721C7 /* Config.swift in Sources */,
 				8C897EF12912A6DF00B757F8 /* AppCoordinator.swift in Sources */,
 				8C54400D29142329009721C7 /* Network.swift in Sources */,
-				8CA7EE0C29194A6700AB620C /* ListCars.swift in Sources */,
 				8C897EDB2912A2DB00B757F8 /* AppDelegate.swift in Sources */,
 				8C54400F29142387009721C7 /* Request.swift in Sources */,
 				8C54401D2915A578009721C7 /* ListCarsCoordinator.swift in Sources */,
