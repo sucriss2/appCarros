@@ -7,35 +7,44 @@
 
 import UIKit
 
-class AppCoordinator: Coordinator {
+class AppCoordinator {
 
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController!
     private var window: UIWindow?
     private var childCoordinator: Coordinator?
 
-    init(navigationController: UINavigationController, window: UIWindow) {
-        self.navigationController = navigationController
+    init(window: UIWindow) {
         self.window = window
     }
 
     func start() {
+        showLoginCoordinator()
+    }
+
+    fileprivate func showLoginCoordinator() {
         let navigationController = UINavigationController()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
-        showLoginCoordinator(navigationController)
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController, loginDelegate: self)
+        loginCoordinator.start()
+        childCoordinator = loginCoordinator
     }
 
-    fileprivate func showLoginCoordinator(_ navigationController: UINavigationController) {
+    fileprivate func showHomeCoordinator() {
+        let navigationController = UINavigationController()
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+
         let listCarsCoordinator = ListCarsCoordinator(navigationController: navigationController)
         listCarsCoordinator.start()
         childCoordinator = listCarsCoordinator
     }
 
-//    fileprivate func showLoginCoordinator(_ navigationController: UINavigationController) {
-//        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
-//        loginCoordinator.start()
-//        childCoordinator = loginCoordinator
-//    }
+}
 
+extension AppCoordinator: LoginCoordinatorDelegate {
+    func showHomeScreen() {
+        showHomeCoordinator()
+    }
 }

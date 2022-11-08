@@ -15,13 +15,11 @@ class ListCarsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
     func prepare(model: Car) {
@@ -29,4 +27,5 @@ class ListCarsTableViewCell: UITableViewCell {
         let url = URL(string: model.urlFoto ?? "")
         self.photoImageView.kf.setImage(with: url)
     }
+
 }

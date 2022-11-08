@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate: AnyObject {
+    func showListCars()
+}
+
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var loginTextField: UITextField!
@@ -14,6 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
 
     weak var coordinator: LoginCoordinator?
+    weak var delegate: LoginViewControllerDelegate?
     var model: LoginModel?
 
     override func viewDidLoad() {
@@ -28,6 +33,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if validateForm() {
             model?.login(username: loginTextField.text ?? "", password: passwordTextField.text ?? "")
         }
+
     }
 
     private func validateForm() -> Bool {
@@ -54,8 +60,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
 extension LoginViewController: LoginModelDelegate {
     func loginSuccess() {
-        DispatchQueue.main.async {
-            // ir para proxima tela
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.showListCars()
+            print("----->>>>>>>")
         }
     }
 

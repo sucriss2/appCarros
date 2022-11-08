@@ -8,11 +8,18 @@
 import Foundation
 import UIKit
 
+protocol LoginCoordinatorDelegate: AnyObject {
+    func showHomeScreen()
+}
+
 class LoginCoordinator: Coordinator {
     var navigationController: UINavigationController
+    private var listCarsCoordinator: ListCarsCoordinator?
+    weak var loginDelegate: LoginCoordinatorDelegate?
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, loginDelegate: LoginCoordinatorDelegate?) {
         self.navigationController = navigationController
+        self.loginDelegate = loginDelegate
     }
 
     func start() {
@@ -33,8 +40,15 @@ class LoginCoordinator: Coordinator {
         model.service = service
         model.delegate = viewController
         viewController.model = model
+        viewController.delegate = self
 
         return viewController
     }
 
+}
+
+extension LoginCoordinator: LoginViewControllerDelegate {
+    func showListCars() {
+        loginDelegate?.showHomeScreen()
+    }
 }

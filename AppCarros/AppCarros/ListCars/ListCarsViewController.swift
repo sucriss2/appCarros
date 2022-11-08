@@ -18,9 +18,9 @@ class ListCarsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Carros"
         tableView.dataSource = self
         model?.load()
-        print("~~~> Abriu a SEGUNDA TELA fofa.!!")
     }
 
 }
