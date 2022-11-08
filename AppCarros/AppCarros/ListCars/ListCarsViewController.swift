@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol ListCarsViewControllerDelegate: AnyObject {
+    func showDetail(car: Car)
+}
+
 class ListCarsViewController: UIViewController {
+
     @IBOutlet weak var tableView: UITableView!
 
     weak var coordinator: ListCarsCoordinator?
+    weak var delegate: ListCarsViewControllerDelegate?
     var model: ListCarsModel?
     var cars: [Car] {
         model?.cars ?? []
@@ -19,6 +25,7 @@ class ListCarsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Carros"
+        tableView.delegate = self
         tableView.dataSource = self
         model?.load()
     }
@@ -60,4 +67,11 @@ extension ListCarsViewController: ListCarsModelDelegate {
         }
     }
 
+}
+
+extension ListCarsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let car = cars[indexPath.row]
+        delegate?.showDetail(car: car)
+    }
 }

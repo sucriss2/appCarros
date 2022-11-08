@@ -9,15 +9,31 @@ import Foundation
 import UIKit
 
 class DetailCoordinator: Coordinator {
+    private let car: Car
     var navigationController: UINavigationController
 
-    init(navigationController: UINavigationController) {
+    init(car: Car, navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.car = car
     }
 
     func start() {
-        let detailVC = DetailViewController()
+        let detailVC = makeDetailViewController()
         navigationController.pushViewController(detailVC, animated: true)
+    }
+
+    private func makeDetailViewController() -> DetailViewController {
+        let model = DetailModel(car: car)
+        let storyboard = UIStoryboard(name: "DetailStoryboard", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(
+            withIdentifier: "DetailViewController"
+        ) as? DetailViewController else {
+            fatalError()
+        }
+
+        viewController.model = model
+
+        return viewController
     }
 
 }

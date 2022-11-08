@@ -10,6 +10,7 @@ import UIKit
 
 class ListCarsCoordinator: Coordinator {
     var navigationController: UINavigationController
+    private var detailCoordinator: DetailCoordinator?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -33,8 +34,18 @@ class ListCarsCoordinator: Coordinator {
         model.service = service
         model.delegate = viewController
         viewController.model = model
+        viewController.delegate = self
 
         return viewController
+    }
+
+}
+
+extension ListCarsCoordinator: ListCarsViewControllerDelegate {
+    func showDetail(car: Car) {
+        let detailCoordinator = DetailCoordinator(car: car, navigationController: navigationController)
+        detailCoordinator.start()
+        self.detailCoordinator = detailCoordinator
     }
 
 }
