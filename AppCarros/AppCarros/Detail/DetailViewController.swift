@@ -9,6 +9,10 @@ import UIKit
 import MapKit
 import Kingfisher
 
+protocol DetailViewControllerDelegate: AnyObject {
+    func showVideo(url: URL)
+}
+
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var photoImageView: UIImageView!
@@ -17,21 +21,48 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descricaoLabel: UILabel!
     @IBOutlet weak var mapaMapView: MKMapView!
 
-    weak var coordinator: DetailCoordinator?
+    weak var delegate: DetailViewControllerDelegate?
     var model: DetailModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Detalhes"
         showDetail()
-        print("Abriu a 3å tela fofinha")
+    }
+
+    @IBAction func showVideo(_ sender: UIButton) {
+        guard let model = model else {
+            return
+        }
+        delegate?.showVideo(url: model.carVideo)
     }
 
     private func showDetail() {
-        let url = URL(string: model?.carPhoto ?? "")
-        self.photoImageView.kf.setImage(with: url)
-        nomeLabel.text = model?.carNome
-        tipoLabel.text = model?.carTipo
-        descricaoLabel.text = model?.carDescricao ?? ""
+        guard let model = model else {
+            return
+        }
+
+        photoImageView.kf.setImage(with: model.carPhoto)
+        nomeLabel.text = model.carNome
+        tipoLabel.text = model.carTipo
+        descricaoLabel.text = model.carDescricao
+        showMap()
+    }
+
+    private func showMap() {
+        guard let model = model else {
+            return
+        }
+
+        mapaMapView.isHidden = true
+        if model.hasCoordinates {
+            mapaMapView.isHidden = false
+            let coords = CLLocationCoordinate2D(latitude: model.carLat, longitude: model.carLong)
+            let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+            let region = MKCoordinateRegion(center: coords, span: span)
+            mapaMapView.region = region
+        }
+
     }
 
 }

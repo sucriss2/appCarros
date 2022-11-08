@@ -15,7 +15,6 @@ class ListCarsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    weak var coordinator: ListCarsCoordinator?
     weak var delegate: ListCarsViewControllerDelegate?
     var model: ListCarsModel?
     var cars: [Car] {

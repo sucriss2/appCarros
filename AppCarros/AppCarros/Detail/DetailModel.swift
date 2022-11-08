@@ -15,31 +15,39 @@ class DetailModel {
     }
 
     var carTipo: String {
-        return car.tipo.capitalized
+        return car.type.capitalized
     }
 
     var carNome: String {
-        return car.nome
+        return car.name
     }
 
     var carDescricao: String {
-        return car.descricao ?? ""
+        return car.description ?? ""
     }
 
-    var carPhoto: String {
-        return car.urlFoto ?? ""
+    var carPhoto: URL {
+        return URL(string: car.urlPhoto ?? "") ?? URL(fileURLWithPath: "")
     }
 
-    var carVideo: String {
-        return car.urlVideo ?? ""
+    var carVideo: URL {
+        return URL(string: car.urlVideo ?? "") ?? URL(fileURLWithPath: "")
     }
 
-    var carLat: String {
-        return car.latitude ?? ""
+    var carLat: Double {
+        return Double(car.latitude ?? "") ?? 0.0
     }
 
-    var carLong: String {
-        return car.longitude ?? ""
+    var carLong: Double {
+        return Double(car.longitude ?? "") ?? 0.0
+    }
+
+    var hasCoordinates: Bool {
+        return car.latitude != nil && car.longitude != nil
+    }
+
+    var hasVideo: Bool {
+        return car.urlVideo != nil
     }
 
     init(car: Car) {

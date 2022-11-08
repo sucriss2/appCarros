@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 class DetailCoordinator: Coordinator {
     private let car: Car
@@ -32,8 +33,20 @@ class DetailCoordinator: Coordinator {
         }
 
         viewController.model = model
+        viewController.delegate = self
 
         return viewController
     }
 
+    private func makeVideoController(url: URL) {
+        let safariViewController = SFSafariViewController(url: url)
+        navigationController.pushViewController(safariViewController, animated: true)
+    }
+
+}
+
+extension DetailCoordinator: DetailViewControllerDelegate {
+    func showVideo(url: URL) {
+        makeVideoController(url: url)
+    }
 }

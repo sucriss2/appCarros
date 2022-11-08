@@ -17,7 +17,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
 
-    weak var coordinator: LoginCoordinator?
     weak var delegate: LoginViewControllerDelegate?
     var model: LoginModel?
 
@@ -26,7 +25,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         model?.delegate = self
         loginTextField.delegate = self
         passwordTextField.delegate = self
-        print("==> Abriu a view fofa")
     }
 
     @IBAction func show(_ sender: UIButton) {
@@ -62,7 +60,6 @@ extension LoginViewController: LoginModelDelegate {
     func loginSuccess() {
         DispatchQueue.main.async { [weak self] in
             self?.delegate?.showListCars()
-            print("----->>>>>>>")
         }
     }
 
