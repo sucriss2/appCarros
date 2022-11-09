@@ -27,7 +27,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bBO-FD-0BZ">
-                                        <rect key="frame" x="0.0" y="229.99999999999997" width="390" height="265.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="230" width="390" height="269"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fZU-Kz-FeQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="69"/>
@@ -106,10 +106,13 @@
                                                     </mapView>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjt-Yl-ijk">
-                                                <rect key="frame" x="0.0" y="231" width="390" height="34.333333333333314"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Assistir Video"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjt-Yl-ijk">
+                                                <rect key="frame" x="0.0" y="231" width="390" height="38"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="▶️ Assistir Video">
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="showVideo:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rHC-2g-uPR"/>
                                                 </connections>
