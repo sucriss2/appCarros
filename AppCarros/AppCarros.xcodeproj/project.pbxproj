@@ -83,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C3FBBCC29241E3C00FEAFCF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8CDED0782913156D000F665C /* Login */,
+				8C54401E2915A583009721C7 /* ListCars */,
+				8C7B0AE6291AA61600940E7A /* Detail */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		8C54401029142394009721C7 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,9 +119,9 @@
 			children = (
 				8C54401C2915A578009721C7 /* ListCarsCoordinator.swift */,
 				8C54401A2915A504009721C7 /* ListCarsViewController.swift */,
+				8CA7EE092919456D00AB620C /* ListCarsTableViewCell.swift */,
 				8CA7EE0F291951CB00AB620C /* ListCarsModel.swift */,
 				8CA7EE1429198BF000AB620C /* ListCarsService.swift */,
-				8CA7EE092919456D00AB620C /* ListCarsTableViewCell.swift */,
 				8C54401F2915AD51009721C7 /* ListCarsStoryboard.storyboard */,
 			);
 			path = ListCars;
@@ -152,9 +162,7 @@
 				8C54401029142394009721C7 /* Networks */,
 				8C897EF42912AA9100B757F8 /* Coordinator */,
 				8C54401729147D2A009721C7 /* Models */,
-				8CDED0782913156D000F665C /* Login */,
-				8C54401E2915A583009721C7 /* ListCars */,
-				8C7B0AE6291AA61600940E7A /* Detail */,
+				8C3FBBCC29241E3C00FEAFCF /* Scenes */,
 				8C897EE32912A2DC00B757F8 /* Assets.xcassets */,
 				8C897EE52912A2DC00B757F8 /* LaunchScreen.storyboard */,
 				8C897EE82912A2DC00B757F8 /* Info.plist */,

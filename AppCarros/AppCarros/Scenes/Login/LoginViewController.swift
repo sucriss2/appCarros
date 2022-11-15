@@ -16,12 +16,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
     weak var delegate: LoginViewControllerDelegate?
     var model: LoginModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        stopLoading()
         model?.delegate = self
         loginTextField.delegate = self
         passwordTextField.delegate = self
@@ -31,16 +33,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if validateForm() {
             model?.login(username: loginTextField.text ?? "", password: passwordTextField.text ?? "")
         }
+        showLoading()
 
+    }
+
+    private func showLoading() {
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+        loginButton.isEnabled = false
+    }
+
+    private func stopLoading() {
+        loadingIndicator.isHidden = true
+        loadingIndicator.stopAnimating()
+        loginButton.isEnabled = true
     }
 
     private func validateForm() -> Bool {
         if loginTextField.text?.isEmpty == true {
+            stopLoading()
             alert(message: "Campo de Usuario deve ser preenchido")
             return false
         }
 
         if passwordTextField.text?.isEmpty == true {
+            stopLoading()
             alert(message: "Campo de Senha deve ser preenchido")
             return false
         }
@@ -60,12 +77,14 @@ extension LoginViewController: LoginModelDelegate {
     func loginSuccess() {
         DispatchQueue.main.async { [weak self] in
             self?.delegate?.showListCars()
+            self?.stopLoading()
         }
     }
 
     func loginFail(message: String) {
         DispatchQueue.main.async {
             self.alert(message: message)
+            self.stopLoading()
         }
     }
 }

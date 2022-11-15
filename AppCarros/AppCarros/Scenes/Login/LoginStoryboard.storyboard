@@ -22,6 +22,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xif-2s-F5y">
                                 <rect key="frame" x="48" y="232.66666666666663" width="294" height="379"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8T-8v-9bH">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carros" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMi-KN-DHY">
+                                                <rect key="frame" x="113.66666666666666" y="16.666666666666686" width="67" height="26.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="3Ae-yB-fKo"/>
+                                            <constraint firstItem="oMi-KN-DHY" firstAttribute="centerX" secondItem="G8T-8v-9bH" secondAttribute="centerX" id="aiI-qa-6Cx"/>
+                                            <constraint firstItem="oMi-KN-DHY" firstAttribute="centerY" secondItem="G8T-8v-9bH" secondAttribute="centerY" id="rWS-vR-BJV"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZVx-uQ-uTQ">
                                         <rect key="frame" x="0.0" y="60.000000000000028" width="294" height="319"/>
                                         <subviews>
@@ -190,23 +207,6 @@
                                             <constraint firstItem="r1l-fY-muA" firstAttribute="centerX" secondItem="ZVx-uQ-uTQ" secondAttribute="centerX" id="z2x-9S-Viw"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8T-8v-9bH">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carros" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMi-KN-DHY">
-                                                <rect key="frame" x="113.66666666666666" y="16.666666666666686" width="67" height="26.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="3Ae-yB-fKo"/>
-                                            <constraint firstItem="oMi-KN-DHY" firstAttribute="centerX" secondItem="G8T-8v-9bH" secondAttribute="centerX" id="aiI-qa-6Cx"/>
-                                            <constraint firstItem="oMi-KN-DHY" firstAttribute="centerY" secondItem="G8T-8v-9bH" secondAttribute="centerY" id="rWS-vR-BJV"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -219,6 +219,11 @@
                                     <constraint firstAttribute="trailing" secondItem="G8T-8v-9bH" secondAttribute="trailing" id="qKA-8s-vci"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hTX-6D-uoO">
+                                <rect key="frame" x="176.66666666666666" y="403.66666666666669" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.73755691229999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -229,13 +234,16 @@
                             <constraint firstItem="NbC-6A-9QN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="IdK-ga-a4y"/>
                             <constraint firstItem="Xif-2s-F5y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="YFU-6G-7uD"/>
                             <constraint firstItem="NbC-6A-9QN" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="avh-3g-PId"/>
+                            <constraint firstItem="hTX-6D-uoO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ci3-WO-ifW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Xif-2s-F5y" secondAttribute="bottom" constant="20" id="e8m-9V-biU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xif-2s-F5y" secondAttribute="trailing" constant="20" id="gA7-zu-Pah"/>
                             <constraint firstItem="Xif-2s-F5y" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="mqa-lC-fcR"/>
                             <constraint firstItem="NbC-6A-9QN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qoZ-R5-4Bn"/>
+                            <constraint firstItem="hTX-6D-uoO" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="wXe-ob-JBm"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="hTX-6D-uoO" id="LFh-nk-5ks"/>
                         <outlet property="loginButton" destination="dDk-lm-Qok" id="hwh-vn-oje"/>
                         <outlet property="loginTextField" destination="4jx-Q8-jpB" id="TD5-ww-AYJ"/>
                         <outlet property="passwordTextField" destination="gcB-lb-loO" id="j9d-lh-xpx"/>
